@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id="demo">Click the button to dispaly the date.</p>
+		<button id="time">
+			The time is?
+		</button>
+		<p id="date"></p>
+		<script>
+			let name = document.getElementById("demo");
+			let clickTime = document.getElementById("time");
+            let timeDispaly = document.getElementById("date")
+			clickTime.onclick = function() {
+				var todaydate = Date();
+                timeDispaly.innerHTML = todaydate;
+			};
+			name.innerHTML = name.innerHTML + "<br>";
+		</script>
+	</body>
+</html>

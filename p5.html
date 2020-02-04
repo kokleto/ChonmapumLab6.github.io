@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <form id="form" onsubmit="return myFunction()">
+      Name (max 10 characters):
+      <input type="text" id="name" size="20" name="name" /><br />
+      Age (from 1 to 100):
+      <input type="text" id="age" size="20" name="age" /><br />
+      E-mail: <input type="text" id="email" size="20" name="mail" /><br /><br />
+      <input type="submit" value="Submit" />
+    </form>
+
+    <script>
+      function myFunction() {
+        var email = document.getElementById("email").value.indexOf("@");
+        var lastemail = document.getElementById("email").value.length - 1;
+        var age = document.getElementById("age").value;
+        var name = document.getElementById("name").value;
+        submitOK = "true";
+
+        if (name.length < 1) {
+          alert("Input your name");
+          submitOK = "false";
+        }
+
+        if (name.length > 10) {
+          alert("The name may have no more than 10 characters");
+          submitOK = "false";
+        }
+
+        if (isNaN(age) || age < 1 || age > 100) {
+          alert("The age must be a number between 1 and 100");
+          submitOK = "false";
+        }
+
+        if (email == -1) {
+          alert("Not");
+          submitOK = "false";
+        } else {
+          if (email == 0 || email == lastemail) {
+            alert("Not a valid e-mail because it does not have @");
+            submitOK = "false";
+          }
+        }
+
+        if (submitOK == "false") {
+          return false;
+        } else {
+          return true;
+        }
+      }
+    </script>
+  </body>
+</html>
